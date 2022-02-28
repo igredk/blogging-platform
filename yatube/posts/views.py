@@ -9,7 +9,7 @@ from django.shortcuts import (redirect,
                               get_list_or_404
                               )
 
-from .models import Comment, Follow, Group, Post, User
+from .models import Follow, Group, Post, User
 from .forms import CommentForm, PostForm
 
 CACHE_LMT = 20
