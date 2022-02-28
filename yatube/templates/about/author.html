@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Об авторе проекта{% endblock %}
+
+{% block content %}
+  <div class="container py-3">
+    <div class="card bg-light mb-3 text-center">
+      <img
+        class="mx-auto d-block"
+        src="{% static 'img/python-logo.png' %}"
+        height="128"
+        width="128"
+      >
+      <div class="card-body">
+        <h3 class="text-muted">Об авторе</h3>
+        <p class="lead">
+          Привет! Меня зовут Редькин Игорь и мое тотемное животное - питон:)
+        </p>
+        <p>
+          <a
+            class="btn btn-lg btn-outline-dark"
+            href="https://github.com/igredk"
+            title="Мой профиль GitHub"
+          >Git Profile</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card bg-light mx-2 col text-center">
+        <h4>Интересы</h4>
+        <p>Бэкенд разработка</p>
+      </div>
+      <div class="card bg-light mx-2 col text-center">
+        <h4>Изучаю</h4>
+        <p>Python, Django framework</p>
+      </div>
+    </div>
+  </div> <!-- /container -->
+{% endblock %}

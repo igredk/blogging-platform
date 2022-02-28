@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Технологии{% endblock %}
+
+{% block content %}
+  <div class="container py-3">
+    <div class="card bg-light mb-3 text-center">
+      <img
+        class="mx-auto d-block"
+        src="{% static 'img/python-logo.png' %}"
+        height="128"
+        width="128"
+      >
+      <div class="card-body">
+        <h3 class="text-muted">Технологии</h3>
+        <p class="lead">
+          Краткое описание того, что я уже изучил 
+          и применял при создании проекта
+        </p>
+      </div>
+    </div>
+
+    <div class="card-group mb-3">
+      <div class="card bg-light text-center">
+        <h4>Python</h4>
+        <p>высокоуровневый язык программирования</p>
+      </div>
+      <div class="card bg-light text-center">
+        <h4>Django framework</h4>
+        <p>свободный фреймворк для веб-приложений на языке Python</p>
+      </div>
+    </div>
+
+    <div class="card-group mb-3">
+      <div class="card bg-light text-center">
+        <h4>HTML, CSS</h4>
+        <p>язык гипертекстовой разметки, каскадные таблицы стилей</p>
+      </div>
+      <div class="card bg-light text-center">
+        <h4>Bootstrap framework</h4>
+        <p>
+          свободный набор инструментов для создания сайтов и веб-приложений
+        </p>
+      </div>
+    </div>
+  </div> <!-- /container -->
+{% endblock %}
