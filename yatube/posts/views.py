@@ -90,13 +90,11 @@ def post_detail(request, post_id):
     author = get_object_or_404(User, username=post.author.username)
     author_posts = get_list_or_404(Post, author=author)
     form = CommentForm(request.POST or None)
-    comments = post.comments.all()
     is_author = request.user == post.author
     context = {
         'post': post,
         'author_posts': author_posts,
         'form': form,
-        'comments': comments,
         'is_author': is_author,
     }
     return render(request, 'posts/post_detail.html', context)

@@ -45,7 +45,7 @@ class CommentAdmin(admin.ModelAdmin):
 
 
 @admin.register(Follow)
-class CommentAdmin(admin.ModelAdmin):
+class FollowAdmin(admin.ModelAdmin):
     # Перечисляем поля, которые должны отображаться в админке
     list_display = (
         'user',
