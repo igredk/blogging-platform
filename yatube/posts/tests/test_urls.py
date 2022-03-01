@@ -123,5 +123,5 @@ class PostsURLTests(TestCase):
     def test_nonexistent_page_return_404(self):
         """Обращение к несуществующей странице возвращает ошибку 404."""
         response = self.guest_client.get(NONEXISTENT_PAGE)
-        self.assertEqual(response.status_code, HTTPStatus.OK)
+        self.assertEqual(response.status_code, HTTPStatus.NOT_FOUND)
         self.assertTemplateUsed(response, NONEXISTENT_PAGE_TEMPLATE)
