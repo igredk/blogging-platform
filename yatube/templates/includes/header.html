@@ -30,7 +30,7 @@
     <div class="collapse navbar-collapse nav-pills" id="navbarTogglerDemo02">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         {% with request.resolver_match.view_name as view_name %}
-        <li class="nav-item"> 
+        <li class="nav-item">
           <a
             class="nav-link
               {% if view_name == 'about:author' %}active{% endif %}"

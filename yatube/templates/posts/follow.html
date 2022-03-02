@@ -5,11 +5,11 @@
 {% block title %}Записи избранных авторов{% endblock %}
 
 {% block content %}
+  <div class="container py-5">
   {% include 'posts/includes/switcher.html' %}
   {% if page_obj|length == 0 %}
     <h5>У Вас нет избранных авторов.</h5>
   {% else %}
-  <div class="container py-5">
     <article>
       {% for post in page_obj %}
       <ul>

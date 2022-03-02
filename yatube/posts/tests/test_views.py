@@ -230,7 +230,7 @@ class PaginatorViewsTest(TestCase):
             description='Тестовое описание'
         )
         cls.NUMBER_OF_POSTS = 13
-        for i in range(cls.NUMBER_OF_POSTS):
+        for i in range(1, cls.NUMBER_OF_POSTS + 1):
             paginator_image = SimpleUploadedFile(
                 name=f'small_{i}.gif',
                 content=SMALL_GIF,
@@ -276,18 +276,18 @@ class PaginatorViewsTest(TestCase):
             self.assertEqual(post_author_0, PaginatorViewsTest.author)
             self.assertEqual(
                 post_text_0,
-                f'Тестовая запись {self.NUMBER_OF_POSTS - 1}'
+                f'Тестовая запись {self.NUMBER_OF_POSTS}'
             )
             self.assertEqual(post_group_0, PaginatorViewsTest.group)
             self.assertEqual(
                 post_image_0,
-                f'posts/small_{self.NUMBER_OF_POSTS - 1}.gif'
+                f'posts/small_{self.NUMBER_OF_POSTS}.gif'
             )
             # Проверка количества записей на второй странице.
             response = self.client.get(address + '?page=2')
             self.assertEqual(
                 len(response.context['page_obj']),
-                self.NUMBER_OF_POSTS - paginator_limit
+                self.NUMBER_OF_POSTS % paginator_limit
             )
             # Проверка содержимого первой записи второй страницы.
             first_post = response.context['page_obj'][0]
@@ -298,10 +298,10 @@ class PaginatorViewsTest(TestCase):
             self.assertEqual(post_author_0, PaginatorViewsTest.author)
             self.assertEqual(
                 post_text_0,
-                f'Тестовая запись {self.NUMBER_OF_POSTS - paginator_limit - 1}'
+                f'Тестовая запись {self.NUMBER_OF_POSTS % paginator_limit}'
             )
             self.assertEqual(post_group_0, PaginatorViewsTest.group)
             self.assertEqual(
                 post_image_0,
-                f'posts/small_{self.NUMBER_OF_POSTS - paginator_limit - 1}.gif'
+                f'posts/small_{self.NUMBER_OF_POSTS % paginator_limit}.gif'
             )
